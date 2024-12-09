@@ -7,6 +7,9 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { removeProfile } from "@/store/profiles/profileSlice";
+import { Trash2 } from "lucide-react";
+import { useDispatch } from "react-redux";
 import { Link } from "wouter";
 
 interface ProfileProps {
@@ -17,6 +20,8 @@ interface ProfileProps {
 }
 
 export function Profile({ id, username, description, photo }: ProfileProps) {
+  const dispatch = useDispatch();
+
   return (
     <Card className="w-[350px]">
       <CardHeader>
@@ -30,9 +35,21 @@ export function Profile({ id, username, description, photo }: ProfileProps) {
       </CardHeader>
       <CardContent>
         <CardDescription>{description}</CardDescription>
-        <Button className="mt-2" asChild>
-          <Link to={`/profiles/${id}/edit`}>Modifier le profil</Link>
-        </Button>
+        <div className="flex gap-2 justify-center items-center">
+          <Button className="mt-2" asChild>
+            <Link to={`/profiles/${id}/edit`}>Modifier le profil</Link>
+          </Button>
+          <Button
+            className="mt-2"
+            onClick={() => {
+              dispatch(removeProfile(id));
+            }}
+            size="icon"
+            variant="destructive"
+          >
+            <Trash2 />
+          </Button>
+        </div>
       </CardContent>
     </Card>
   );

@@ -24,7 +24,7 @@ export function HomeRoute() {
         ))}
       </div>
       <Button asChild>
-        <Link href={`/profiles/new`}>
+        <Link to={`/profiles/new`}>
           <Plus />
           Ajouter un profil
         </Link>

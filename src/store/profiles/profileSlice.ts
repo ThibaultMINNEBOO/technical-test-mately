@@ -26,6 +26,12 @@ const initialState: ProfileState[] = [
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     photo: "https://avatar.iran.liara.run/public/22",
   },
+  {
+    id: 3,
+    username: "Elon Musk",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    photo: "https://avatar.iran.liara.run/public/23",
+  },
 ];
 
 export const profileSlice = createSlice({

@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { RootState } from "@/store";
 import { useSelector } from "react-redux";
 import { Plus } from "lucide-react";
+import { Link } from "wouter";
 
 export function HomeRoute() {
   const profiles = useSelector((state: RootState) => state.profiles);
@@ -22,9 +23,11 @@ export function HomeRoute() {
           />
         ))}
       </div>
-      <Button variant="outline">
-        <Plus />
-        Ajouter un profil
+      <Button asChild>
+        <Link href={`/profiles/new`}>
+          <Plus />
+          Ajouter un profil
+        </Link>
       </Button>
     </div>
   );

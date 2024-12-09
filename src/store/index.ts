@@ -3,7 +3,7 @@ import profileReducer from "./profiles/profileSlice";
 
 export const store = configureStore({
   reducer: {
-    profile: profileReducer,
+    profiles: profileReducer,
   },
 });
 

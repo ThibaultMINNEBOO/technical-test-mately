@@ -18,12 +18,18 @@ const initialState: ProfileState[] = [
     id: 1,
     username: "John Doe",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    photo: "https://avatar.iran.liara.run/public",
+    photo: "https://avatar.iran.liara.run/public/21",
+  },
+  {
+    id: 2,
+    username: "Jane Doe",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    photo: "https://avatar.iran.liara.run/public/22",
   },
 ];
 
 export const profileSlice = createSlice({
-  name: "profile",
+  name: "profiles",
   initialState,
   reducers: {
     addProfile: (state, action: PayloadAction<ProfilePayload>) => {

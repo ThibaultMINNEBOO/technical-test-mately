@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 import { useLocation } from "wouter";
 
 export function NewProfileRoute() {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [_, setLocation] = useLocation();
   const dispatch = useDispatch();
 
@@ -17,6 +18,7 @@ export function NewProfileRoute() {
         </CardHeader>
         <CardContent>
           <ProfileForm
+            label="Ajouter"
             onSubmit={(data) => {
               dispatch(addProfile(data));
               toast({

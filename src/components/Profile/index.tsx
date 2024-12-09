@@ -7,14 +7,16 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { Link } from "wouter";
 
 interface ProfileProps {
+  id: number;
   username: string;
   description: string;
   photo: string;
 }
 
-export function Profile({ username, description, photo }: ProfileProps) {
+export function Profile({ id, username, description, photo }: ProfileProps) {
   return (
     <Card className="w-[350px]">
       <CardHeader>
@@ -28,7 +30,9 @@ export function Profile({ username, description, photo }: ProfileProps) {
       </CardHeader>
       <CardContent>
         <CardDescription>{description}</CardDescription>
-        <Button className="mt-2">Modifier</Button>
+        <Button className="mt-2" asChild>
+          <Link to={`/profiles/${id}/edit`}>Modifier le profil</Link>
+        </Button>
       </CardContent>
     </Card>
   );

@@ -17,9 +17,14 @@ import { profileSchema } from "./profile.schema";
 interface ProfileFormProps {
   onSubmit: (data: ProfilePayload) => void;
   defaultValues?: ProfilePayload;
+  label: string;
 }
 
-export function ProfileForm({ onSubmit, defaultValues }: ProfileFormProps) {
+export function ProfileForm({
+  onSubmit,
+  defaultValues,
+  label,
+}: ProfileFormProps) {
   const form = useForm<ProfilePayload>({
     defaultValues,
     resolver: zodResolver(profileSchema),
@@ -61,7 +66,7 @@ export function ProfileForm({ onSubmit, defaultValues }: ProfileFormProps) {
           )}
         />
         <Button type="submit" className="mt-5">
-          Ajouter
+          {label}
         </Button>
       </form>
     </Form>

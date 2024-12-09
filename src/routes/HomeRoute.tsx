@@ -15,12 +15,7 @@ export function HomeRoute() {
       </h1>
       <div className="flex flex-wrap justify-center items-center gap-3">
         {profiles.map((profile) => (
-          <Profile
-            key={profile.id}
-            username={profile.username}
-            description={profile.description}
-            photo={profile.photo}
-          />
+          <Profile key={profile.id} {...profile} />
         ))}
       </div>
       <Button asChild>

@@ -17,13 +17,24 @@ export function HomeRoute() {
         {profiles.map((profile) => (
           <Profile key={profile.id} {...profile} />
         ))}
+        {profiles.length === 0 && (
+          <Link
+            to="/profiles/new"
+            className="text-center border-dashed border-2 rounded transition-all opacity-50 hover:opacity-100 hover:border-primary text-gray-500 w-full p-14 content-center"
+          >
+            Aucun profil trouvé, voulez-vous en créer{" "}
+            <span className="text-primary">un</span>
+          </Link>
+        )}
       </div>
-      <Button asChild>
-        <Link to={`/profiles/new`}>
-          <Plus />
-          Ajouter un profil
-        </Link>
-      </Button>
+      {profiles.length > 0 && (
+        <Button asChild>
+          <Link to={`/profiles/new`}>
+            <Plus />
+            Ajouter un profil
+          </Link>
+        </Button>
+      )}
     </div>
   );
 }
